@@ -7,54 +7,88 @@
 </head>
 <body>
     
-
     <h1>Aula 04 - Home</h1>
 
-    <h2>Exemplos de Array</h2>
-
     <p>
-        <a href="pg2.php">CADASTRAR PRODUTO</a>
+        <a href="exemplo.php">Mais exemplos de Arrays</a>
     </p>
+
+    <h2>Exemplos de Array em PHP</h2>
 
     <?php 
     
-        $frutas = array("Maça", "Pera", "Laranja");
+    ############### ÁREA DE DECLARAÇÃO DE ARRAYS ####################
+        // Criando array usando a função 'array'
+        $frutas = array("Maçã", "Pera", "Laranja"); // array inicializado
+        // indices:        0       1        2
 
-        $cidades = ["Curitiba","Salvador","DouglasLandia"];
+        // Criando array usando colchetes []
+        $cidades =  [
+                        "Curitiba", 
+                        "São Paulo", 
+                        "Porto Alegre", 
+                        "Florianópolis"
+                    ];
 
-        $cliente = ["nome" => "Rei Arthur", "idade" => 20, "Email" => "Arthur@email.com"];
-    
-    //Mostrar valor de apenas uma posição de um array
-        echo "<p>Fruta salva na posição 1 do array 'frutas': " . $frutas[1] . "</p>" ;
+        // Criando array usando colchetes [] para indicar índices automáticos
+        $idades[] = 18; // 0
+        $idades[] = 38; // 1
+        $idades[] = 33; // 2
+        $idades[] = 19; // 3
+        $idades[] = 25; // 4
 
-    echo  "<h3>Mostrando Valores do Array cidades</h3>";
+        // Utilizando o laço FOR para salvar novas idades no Array
+        for ($i = 10; $i <= 20; $i++) {
 
-    //Utilizando laço de repetição FOR
-        for ($i=0; $i < count($cidades); $i++) { 
+            // a cada iteração do laço FOR, iremos adiconar o valor de $i como
+            // uma nova idade para o array 'idades'
+            $idades[] = $i;
+            
+        }
 
-            echo "". $cidades[$i] ."<br>";
+        // Criando array associativo $cliente
+        $cliente =  [
+                        "nome"  => "Jason Sobreiro",
+                        "idade" => 38,
+                        "email" => "jasobreiro@up.edu.br"
+                    ];
+        
+    ############### ÁREA DE EXIBIÇÃO DOS VALORES DOS ARRAYS #########
+
+        // Mostrar valor da posição 1 do array 'frutas'
+        echo "<p>Fruta salva na posição 1 do array 'frutas': " . $frutas[1] . "</p>";
+
+        // Utilizando o laço 'for' para percorrer o array 'cidades':
+        
+        echo "<h3>Mostrando valores do array 'cidades' usando o FOR:</h3>";
+        
+        $tamanho = count($cidades); // armazenar o tamanho do array 'cidades'
+        for ($i=0; $i < $tamanho; $i++) { 
+            
+            echo $cidades[$i] . "<br>";
 
         }
 
+        echo "<h3>Mostrando valores do array 'idades' usando o FOREACH</h3>";
 
-    //Utilizando laço de repetição FOREACH
+        // forma simples do FOREACH
+        foreach ($idades as $idade_atual) {
 
-    echo "<h3>Mostrando Valores do Array Cidades</h3>";
+            echo "Idade: " . $idade_atual . "<br>";
 
-    foreach ($cidades as $cidades) {
-        echo "Idades: ". $cidades ."<br>";
-    }
+        }
 
-    //Utilizando laco de repetição FOR para array associativo
+        // Utilizando o laço FOREACH na sua forma completa
+
+        echo "<h3>Mostrando valores do array 'cliente' usando o FOREACH completo</h3>";
     
-    echo "<h3>Mostrando Valores do Array Cliente utilizando a forma COMPLETA do ForEach</h3>";
+        foreach ($cliente as $chave => $valor) {
 
-    foreach ($cliente as $indice => $valor) {
-        echo ucfirst($indice) . ": ". $valor ."<br>";
-    }
+            echo ucfirst($chave) . ": " . $valor . "<br>";
+            // ucfirst = torna a inicial da string maiúscula
+        }
 
     ?>
-
 
 </body>
 </html>

@@ -25,7 +25,7 @@
 
         $produto=$_POST;
 
-        echo "<h3>Produto Cadastrado</h3>"
+        echo "<h3>Produto Cadastrado</h3>";
     }
 
 ?>
