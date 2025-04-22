@@ -21,8 +21,16 @@
             }
             die;
         }
-
+        if($errors=verifyIntervaloNotas()) {
+            foreach($errors as $errors_value ) {
+                echo $errors_value;
+            }
+            die;
+        }
+        
         mostrarNotas();
+
+        calcMediaBi();
         
         echo"<br>Ameeeem";
     ?>
