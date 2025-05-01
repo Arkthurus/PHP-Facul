@@ -17,7 +17,7 @@
 
         $conn   = connect_bd();
 
-        $query   = "SELECT * FROM tb_clientes";
+        $query   = "SELECT * FROM tb_cliente";
 
         $result = mysqli_query($conn, $query); 
 
