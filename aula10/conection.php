@@ -1,0 +1,14 @@
+<?php 
+
+    function connect_bd() {
+
+        $host     =   'localhost:3306';
+        $user     =        'root';
+        $pass     =            '';
+        $dataBank = "bd_cadastro";
+        
+        $conn = mysqli_connect($host ,$user,$pass,$dataBank);
+        if (!$conn) {exit("Erro na conexão" . mysqli_connect_error());}
+        return $conn;
+    }
+?>
