@@ -28,7 +28,7 @@
         $email = $_POST['email'];
         
         $conn = connect_bd();
-        $sql  = "INSERT INTO tb_cliente (name, phone, email)
+        $sql  = "INSERT INTO tb_clientes (name, phone, email)
                  VALUES (?,?,?)";
 
         $stmt = mysqli_prepare($conn, $sql);

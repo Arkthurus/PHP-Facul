@@ -1,4 +1,4 @@
-<?php require_once "functions.php"; require_once "conection.php"?>
+<?php require_once "functions.php"; require_once "conection.php";?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,7 +17,7 @@
 
         $conn   = connect_bd();
 
-        $query   = "SELECT * FROM tb_cliente";
+        $query  = "SELECT * FROM tb_clientes";
 
         $result = mysqli_query($conn, $query); 
 
@@ -26,12 +26,13 @@
         }
 
            
-        echo '<table border="1" style="border-collapse: collapse ">
+        echo '<table border="1" style="border-collapse: collapse">
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
                     <th>Telemóvel</th>
                     <th>E-Mail</th>
+                    <th>Ações</th>
                 </tr>';
             
 
@@ -43,6 +44,10 @@
                 <td>".$linha['name']."</td>
                 <td>".$linha['phone']."</td>
                 <td>".$linha['email']."</td>
+                <td>
+                    <a href=\"excluir.php?id=".$linha['id']."\">Excluir</a> | 
+                    <a href=\"editar.php?id=".$linha['id']."\">Editar</a>
+                </td>
             </tr>";
         }
         echo"</table>";

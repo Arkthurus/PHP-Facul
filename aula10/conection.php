@@ -2,7 +2,7 @@
 
     function connect_bd() {
 
-        $host     =   'localhost:3306';
+        $host     =   'localhost:3307';
         $user     =        'root';
         $pass     =            '';
         $dataBank = "bd_cadastro";
